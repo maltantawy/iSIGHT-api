@@ -36,6 +36,11 @@ accept_version = 2.3
 accept_header = application/json  
 
 
+```
+Logging
+```
+Any errors pertains to API submissions will be reported in the log/error.log file
+
 
 
 
