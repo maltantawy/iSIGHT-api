@@ -30,8 +30,8 @@ Configuration
 The follwoing directives have to be configured before running the script, the configuration file path is: cofig/config.ini
 
 [api]  
-public_key =[<PUBLIC KEY>]  
-private_key =[<PRIVATE KEY>]  
+public_key =[PUBLIC KEY]  
+private_key =[PRIVATE KEY]  
 accept_version = 2.3  
 accept_header = application/json  
 
