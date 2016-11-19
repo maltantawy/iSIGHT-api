@@ -1,0 +1,52 @@
+<html>
+<title>{{ title }}</title>
+<head>
+<style>
+table {
+width:100%;
+}
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+th, td {
+padding: 5px;
+text-align: left;
+}
+table#t01 tr:nth-child(even) {
+background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+background-color:#fff;
+}
+table#t01 th {
+background-color: black;
+color: white;
+}
+</style>
+</head>
+<body>
+<h2>iSIGHT submission results:</h2>
+{% if not results %}
+	<h4>No results found</h4>
+{% else %}
+	<table id="t01" style="width:100%"><tr>
+    <th>Query</th>
+	<th>Report link</th>
+	</tr>
+	{% for k,v in results.items() %}
+		{% if v[-1]>1 %}
+			<tr><td rowspan="{{v[-1]}}">{{k}}</td>
+			{% for elem in v[0:-1] %}
+				<td><a target="_blank" href="{elem}">{{elem}}</a></td></tr><tr>
+			{% endfor %}		
+		{% else %}
+			<tr><td>{{k}}</td>
+			<td><a target="_blank" href="{{v[0]}}">{{v[0]}}</a></td></tr><tr>
+		{% endif %}
+	{% endfor %}
+			
+{% endif %}
+</table>
+</body>
+</html>
