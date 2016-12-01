@@ -117,7 +117,7 @@ class Query():
 					del self.submission_dict[k]
 				else:
 					for num in range(0,len(data['message'])):
-						self.results[k].append(data['message'][num]['reportLink'])
+						self.results[k].append(data['message'][num]['webLink'])
 			except ValueError:
 				f = open('log/error.log', 'a+')
 				print >> f, '{0} , {1} , Decoding JSON has failed'.format(k,v)
